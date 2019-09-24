@@ -46,7 +46,7 @@ public class AppGraph implements CommandLineRunner {
         User manager = userService.findPostByFriends(user, Post.MANAGER);
         log.info("Result: " + manager);
 
-
+        log.info("");
         userName = "Tom";
         log.info("search in: " + userName);
         user = userService.getByName(userName);

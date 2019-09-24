@@ -40,7 +40,6 @@ public class DataInitImpl implements DataInit {
 
         peg.setPost(Post.MANAGER);
 
-
         List<User> all = userService.findAll();
 
         log.info("");
