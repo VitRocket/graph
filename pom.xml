@@ -18,6 +18,7 @@
 
     <modules>
         <module>graph_01</module>
+        <module>labyrinth</module>
     </modules>
 
     <properties>
