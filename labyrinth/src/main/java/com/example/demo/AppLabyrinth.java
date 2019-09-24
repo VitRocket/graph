@@ -32,29 +32,20 @@ public class AppLabyrinth implements CommandLineRunner {
         log.info("APPLICATION FINISHED");
     }
 
-
     private void breadthFirstSearchWay() {
         Cell cell = cellService.getByCoordinates(0, 0);
         log.info("Start: " + cell.toString());
         Cell cellEnd = cellService.getByCoordinates(4, 4);
         log.info("Finish: " + cellEnd.toString());
-
-        log.info("");
-        log.info("search in: " + cell);
-        CellWay manager = cellService.findPostByFriendsWay(cell, cellEnd);
-        log.info("Result: " + manager);
-        printWay(manager);
-        System.out.println();
-
-
+        CellWay cellWay = cellService.findPostByFriendsWay(cell, cellEnd);
+        log.info("Way: " + wayToString(cellWay));
     }
 
-    private void printWay(CellWay userWay) {
-        if (userWay.getFather() != null) {
-            printWay(userWay.getFather());
-            System.out.print(" -> " + userWay.getX() + "." + userWay.getY());
+    private String wayToString(CellWay cellWay) {
+        if (cellWay.getFather() != null) {
+            return wayToString(cellWay.getFather()) + " -> " + cellWay.getX() + "." + cellWay.getY();
         } else {
-            System.out.print(userWay.getX() + "." + userWay.getY());
+            return cellWay.getX() + "." + cellWay.getY();
         }
     }
 }

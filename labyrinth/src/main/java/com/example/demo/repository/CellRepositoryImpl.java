@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class CellRepositoryImpl implements CellRepository {
 
@@ -20,15 +19,10 @@ public class CellRepositoryImpl implements CellRepository {
     }
 
     @Override
-    public List<Cell> findAll() {
-        return cells;
-    }
-
-    @Override
     public Cell findByCoordinates(int x, int y) {
         return cells.stream()
-                .filter(cell -> cell.getX().equals(x) && cell.getY().equals(y))
-                .findAny()
-                .orElse(null);
+                    .filter(cell -> cell.getX().equals(x) && cell.getY().equals(y))
+                    .findAny()
+                    .orElse(null);
     }
 }

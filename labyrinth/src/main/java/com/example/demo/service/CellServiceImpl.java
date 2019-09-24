@@ -58,12 +58,10 @@ public class CellServiceImpl implements CellService {
             if (cellEnd.getX().equals(u.getX()) && cellEnd.getY().equals(u.getY())) {
                 return u;
             } else {
-
                 Set<CellWay> uFriends = u.getLinks().stream()
                                          .map(this::getUserWay)
                                          .collect(Collectors.toSet());
                 uFriends.forEach(userWay -> userWay.setFather(u));
-
 
                 uFriends.forEach(user1 -> {
                     if (!checked.contains(user1)) {

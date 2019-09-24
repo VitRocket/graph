@@ -4,6 +4,7 @@ import com.example.demo.domain.Cell;
 import com.example.demo.domain.CellWay;
 
 public interface CellService {
+
     Cell create(Cell cell);
 
     void makeLink(Cell cell1, Cell cell2);

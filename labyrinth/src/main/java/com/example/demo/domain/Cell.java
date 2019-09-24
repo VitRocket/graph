@@ -1,6 +1,5 @@
 package com.example.demo.domain;
 
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
